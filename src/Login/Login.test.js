@@ -14,6 +14,12 @@ describe('Login functionality', () => {
     });
 
     test('email & password fields should not be null', () => {
+        const wrapper = shallow(<Login />);
+        const email = wrapper.find('#email');
+        const password = wrapper.find('#password');
+        const isEmailRequired = email.prop('required');
+        const isPasswordRequired = password.prop('required');
+        expect(isEmailRequired && isPasswordRequired).toBeTruthy();
     });
 
     test('minimum length of password should be 8 chars', () => {

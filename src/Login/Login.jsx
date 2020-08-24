@@ -2,8 +2,8 @@ import React from 'react';
 
 const Login = () => {
     return (<p>Login
-        <input id="email" />
-        <input id="password" />
+        <input id="email" required/>
+        <input id="password" required/>
     </p>);
 }
 
