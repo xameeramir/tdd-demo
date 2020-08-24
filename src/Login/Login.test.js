@@ -23,6 +23,10 @@ describe('Login functionality', () => {
     });
 
     test('minimum length of password should be 8 chars', () => {
+        const wrapper = shallow(<Login />);
+        const password = wrapper.find('#password');
+        const passwordMinLength = password.prop('minLength');
+        expect(passwordMinLength).toBe('8');
     });
 
     test('email id needs to be valid', () => {
