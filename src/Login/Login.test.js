@@ -30,9 +30,14 @@ describe('Login functionality', () => {
     });
 
     test('email id needs to be valid', () => {
+        // assignment
     });
 
     test('on signin, success message should be shown', () => {
+        // login submit button test
+        // submission should be triggered, refer first testing PR for event trigerring
+        // store label element in variable
+        // label text should be success
     });
 
 })
