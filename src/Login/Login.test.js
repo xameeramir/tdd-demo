@@ -3,10 +3,14 @@ import EnzymeAdapter from 'enzyme-adapter-react-16';
 import Enzyme, { shallow } from 'enzyme';
 import Login from './Login';
 
-// Enzyme.configure({ adapter: new EnzymeAdapter() });
+Enzyme.configure({ adapter: new EnzymeAdapter() });
 
 describe('Login functionality', () => {
     test('login form should accept email and password', () => {
+        const wrapper = shallow(<Login />);
+        const email = wrapper.find('#email');
+        const password = wrapper.find('#password');
+        expect(email.length && password.length).toBeTruthy();
     });
 
     test('email & password fields should not be null', () => {
