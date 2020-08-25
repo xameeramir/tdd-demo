@@ -38,6 +38,17 @@ describe('Login functionality', () => {
         // submission should be triggered, refer first testing PR for event trigerring
         // store label element in variable
         // label text should be success
+        const wrapper = shallow(<Login />);
+        const form = wrapper.find('form');
+        form.simulate('submit', {
+            preventDefault() { },
+            target: {
+                email: 'abc@gmail.com',
+                password: 'abc123'
+            }
+        });
+        const message = wrapper.find('#message');
+        expect(message.text()).toContain('success');
     });
 
 })
